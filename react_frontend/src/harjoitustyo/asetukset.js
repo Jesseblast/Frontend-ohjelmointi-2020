@@ -1,10 +1,18 @@
 import React from "react"
-import { Typography } from "@material-ui/core"
+import { Button } from "@material-ui/core"
+import { ButtonStyle } from "./styles"
 
 export const Asetukset = () => {
     return (
         <div>
-            <Typography>Tänne tulee asetukset tai jotain vastaavaa myöhemmin.</Typography>
+            <a href={`http://localhost:8080/data/deleteall`}>
+                <Button /* Delete-button */
+                    style={ ButtonStyle } 
+                    variant="outlined" 
+                    color="secondary">
+                        Poista kaikki muistutukset
+                </Button>
+            </a>
         </div>
     )
 }

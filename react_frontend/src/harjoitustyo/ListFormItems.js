@@ -1,6 +1,7 @@
 import React from "react"
-import { Card, CardContent, Typography, Grid } from "@material-ui/core"
+import { Card, CardContent, Typography, Grid, Button } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles";
+import { ButtonStyle } from "./styles"
 import * as COLORS from "@material-ui/core/colors";
 
 const STYLE = makeStyles({
@@ -27,6 +28,15 @@ export const ListFormItems = (props) => {
                                             <Typography><b>Otsikko:</b> { item.title }</Typography>
                                             <Typography><b>Nimi:</b> { item.name }</Typography>
                                             <Typography><b>Sisältö:</b> { item.content }</Typography>
+
+                                            <a href={`http://localhost:8080/data/delete/${item.id}`}>
+                                                <Button /* Delete-button */
+                                                    style={ ButtonStyle } 
+                                                    variant="outlined" 
+                                                    color="secondary">
+                                                        Poista
+                                                </Button>
+                                            </a>
                                         </CardContent>
                                     </Card>
                                 </Grid>
